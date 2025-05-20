@@ -1,0 +1,22 @@
+// config/env.ts
+import { FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID } from "@env";
+
+function assertEnv(name: string, value: string | undefined): string {
+  if (!value) throw new Error(`[env] Missing: ${name}`);
+  return value;
+}
+
+export const env = {
+  FIREBASE_API_KEY: assertEnv("FIREBASE_API_KEY", FIREBASE_API_KEY),
+  FIREBASE_AUTH_DOMAIN: assertEnv("FIREBASE_AUTH_DOMAIN", FIREBASE_AUTH_DOMAIN),
+  FIREBASE_PROJECT_ID: assertEnv("FIREBASE_PROJECT_ID", FIREBASE_PROJECT_ID),
+  FIREBASE_STORAGE_BUCKET: assertEnv(
+    "FIREBASE_STORAGE_BUCKET",
+    FIREBASE_STORAGE_BUCKET
+  ),
+  FIREBASE_MESSAGING_SENDER_ID: assertEnv(
+    "FIREBASE_MESSAGING_SENDER_ID",
+    FIREBASE_MESSAGING_SENDER_ID
+  ),
+  FIREBASE_APP_ID: assertEnv("FIREBASE_APP_ID", FIREBASE_APP_ID),
+};
